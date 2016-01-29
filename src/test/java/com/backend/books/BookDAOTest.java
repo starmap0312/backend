@@ -23,7 +23,7 @@ public class BookDAOTest extends CommonTest {
 
     @Test
     public void getAllBooksShouldReturnAllBooks() {
-        //assertThat(bookDAO.getAllBooks().size(), is(equalTo(1)));
+        assertThat(bookDAO.getAllBooks().size(), is(equalTo(1)));
     }
 
     @Test
