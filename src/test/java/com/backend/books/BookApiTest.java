@@ -78,7 +78,8 @@ public class BookApiTest extends CommonTest {
     public void getV1ItemsShouldReturnSpecifiedMaximumNumberOfBooks() throws Exception {
         insertBooks(10);
         String json = requestItems(0, 7);
-        List<Book> actual = objectMapper.readValue(json, objectMapper.getTypeFactory().constructCollectionType(List.class, Book.class));
+        List<Book> actual = objectMapper.readValue(
+            json, objectMapper.getTypeFactory().constructCollectionType(List.class, Book.class));
         assertThat(actual.size(), is(7));
     }
 
@@ -86,7 +87,8 @@ public class BookApiTest extends CommonTest {
     public void getV1ItemsShouldReturnSpecifiedMaximumNumberOfBooksAndSkipToTheSpecifiedFirstResult() throws Exception {
         insertBooks(20);
         String json = requestItems(5, 7);
-        List<Book> actual = objectMapper.readValue(json, objectMapper.getTypeFactory().constructCollectionType(List.class, Book.class));
+        List<Book> actual = objectMapper.readValue(
+            json, objectMapper.getTypeFactory().constructCollectionType(List.class, Book.class));
         assertThat(actual.size(), is(7));
         assertThat(actual.get(0).getId(), is(equalTo(6)));
     }
