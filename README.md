@@ -19,3 +19,7 @@ gradle jettyRun
 
 # Reload vagrant provision
 vagrant reload --provision
+
+# Start/Stop vagrant
+vagrant up
+vagrant destroy

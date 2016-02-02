@@ -15,10 +15,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 RUN apt-get install -q -y git
 
 # Gradle
-ADD https://services.gradle.org/distributions/gradle-1.12-all.zip /opt/gradle-1.12-all.zip
-RUN unzip /opt/gradle-1.12-all.zip -d /opt/
-ENV GRADLE_HOME /opt/gradle-1.12
-ENV PATH $PATH:$GRADLE_HOME/bin
+RUN apt-get install gradle
 
 # Jenkins
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /opt/jenkins.war
