@@ -16,3 +16,9 @@ http://localhost:8080/api/v1/items/
 
 # build and execute java in src/main/webapp/
 gradle jettyRun
+
+# git revert to previous commit and make it a new commit
+git rm -r . # remove all files
+git checkout HEAD~3 . # path specifier: overwrite all matching files (all files match dot)
+git commit # make a new commit
+
