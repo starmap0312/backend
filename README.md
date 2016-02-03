@@ -16,10 +16,3 @@ http://localhost:8080/api/v1/items/
 
 # build and execute java in src/main/webapp/
 gradle jettyRun
-
-# Reload vagrant provision
-vagrant reload --provision
-
-# Start/Stop vagrant
-vagrant up
-vagrant destroy
