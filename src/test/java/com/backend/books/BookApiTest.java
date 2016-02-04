@@ -35,7 +35,7 @@ public class BookApiTest extends CommonTest {
     @Before
     public void beforeBookApiTest() throws Exception {
         Client client = ClientBuilder.newClient();
-        WebTarget target = client.target("http://localhost:8080/api/");
+        WebTarget target = client.target("http://localhost:9000/api/");
         itemsTarget = target.path("v1/items");
         objectMapper = new ObjectMapper();
     }
