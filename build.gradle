@@ -2,6 +2,10 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'application'
 apply plugin: 'jetty'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.7
 version = '1.0'
@@ -24,6 +28,10 @@ dependencies {
     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.7'
     compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-grizzly2-http', version: '2.7'
     compile group: 'org.jasypt', name: 'jasypt', version: '1.9.2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
 }
 
 task(runTesting, dependsOn: 'classes', type: JavaExec) {
